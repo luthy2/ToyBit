@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+{% block content%}
+  {% if exists == 'True' %}
+  <h2>This link has already been shortened!</h2>
+  <p><a href = "{{link.original_url}}" target="_blank">{{link.original_url}}</a></p>
+  <p><strong><a href ="{{link.external_url()}}" target="_blank">{{link.external_url()}}</a></strong></p>
+  <p>created on: {{link.timestamp}}</p>
+  <p>{{link.count_visits()}} clicks</p>
+  <p>traffic sources:</p>
+  {% for item in visit %}
+    {{visit.referrer}}
+  {% endfor %}
+  {% else %}
+  <h2>Your link is ready to share.</h2>
+  <p><a href = "{{link.original_url}}">{{link.original_url}}</a></p>
+  <p><strong><a href = "{{link.external_url()}}">{{link.external_url()}}</a></strong></p>
+  {%endif%}
+{% endblock %}

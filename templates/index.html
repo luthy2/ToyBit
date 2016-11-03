@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% block content%}
+<h1>ToyBit</h1>
+<h2>
+  A simple link shortening service.
+  <p>
+    <small>Paste a link to get started.</small>
+  </p>
+</h2>
+<form method="POST" class="form-inline">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-12">
+        {{form.hidden_tag()}}
+        {{form.url(type_="url", class_="form-control")}}
+        <button type="submit" class="btn btn-primary">shorten</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}
