@@ -1,7 +1,7 @@
 #ToyBit
-##A toy [bit.ly](http://www.bitly.com) clone
+A toy [bit.ly](http://www.bitly.com) clone
 
-###features
+##features
 ####link shortening
 a simple flask app with one feature. takes a url and converts into a shortened link.
 any visit to the shortened link will redirect to the original url
@@ -9,7 +9,7 @@ any visit to the shortened link will redirect to the original url
 ####not much else
 pretty basic stuff
 
-###installing
+##installing
 on the command line
 You will want to set up in a [virtualenv](https://virtualenv.pypa.io/en/stable/)
 '''
@@ -30,7 +30,7 @@ $ flask run
 * Running on http://127.0.0.1:5000/
 '''
 
-###improvements
+##improvements
 
 ####Project Structure
 The project isn't very well structured. The main app.py module should be broken up into seperate modules.
