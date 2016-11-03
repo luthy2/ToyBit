@@ -10,7 +10,6 @@ any visit to the shortened link will redirect to the original url
 pretty basic stuff
 
 ##installing
-on the command line
 You will want to set up in a [virtualenv](https://virtualenv.pypa.io/en/stable/)
 ```
 $ virtualenv env
@@ -32,18 +31,18 @@ $ flask run
 
 ##improvements
 
-####Project Structure
+####project structure
 The project isn't very well structured. The main app.py module should be broken up into seperate modules.
 
-####Tests
+####tests
 There are no tests
 
 ####performance
 bitly is processing somewhere north of [2500 redirect](http://highscalability.com/blog/2014/7/14/bitly-lessons-learned-building-a-distributed-system-that-han.html) requests per second. Scalability would clearly be an issue for this tiny app. An easy improvement to make would be to cache every url according to its ```unique_id``` and perform all analytics operations asynchronously. Even the smallest/cheapest AWS ElastiCache instance could hold ~700k unique urls.
 
-####Front End
-bitly has a nice asynchronous link look up which displays the shortened link without triggering a page reload. An easy implementation of this feature would be to convert the ```/link/<unique_id>``` route into a json endpoint.
+####front End
+bitly has a nice asynchronous link look up which displays the shortened link without triggering a page reload. An easy implementation of this feature would be to convert the ```/link/<unique_id>``` route into a json endpoint. 
 
-####Others
+####others
 user accounts
 more analytics with nice charts
