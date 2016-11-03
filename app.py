@@ -6,7 +6,6 @@ from flask_wtf import Form
 from wtforms import StringField
 from wtforms.validators import DataRequired, Length, URL
 from flask_sqlalchemy import SQLAlchemy
-# from marshmallow import Schema, fields
 from datetime import datetime
 import requests
 import random
@@ -22,7 +21,6 @@ app.config['SECRET_KEY'] ='SecretKey'
 app.config['DEBUG'] = "True"
 db = SQLAlchemy(app)
 
-# ma = Marshmallow(app)
 
 #---------models---------#
 class ShortLink(db.Model):
@@ -65,12 +63,6 @@ class Visit(db.Model):
         self.timestamp = timestamp
 
 
-# class ShortLinkAPISchema(ma.Schema):
-#     class Meta:
-#         model=ShortLink
-
-
-
 #-----------Forms-----------#
 class URLForm(Form):
     url = StringField('url', validators=[DataRequired(), URL(require_tld = False, message = "that doesn't seem like a valid URL. Try adding 'http://'"), Length(min = 7, max = 350)])
@@ -108,7 +100,6 @@ def link(unique_id):
         return render_template("link.html", link = short_link, exists = exists, visits=visits)
     else:
         return abort(404)
-
 
 
 @app.route ("/r/<unique_id>")
