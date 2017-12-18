@@ -65,7 +65,7 @@ class Visit(db.Model):
 
 #-----------Forms-----------#
 class URLForm(Form):
-    url = StringField('url', validators=[DataRequired(), URL(require_tld = False, message = "that doesn't seem like a valid URL. Try adding 'http://'"), Length(min = 7, max = 350)])
+    url = StringField('url', validators=[DataRequired(), URL(require_tld = False, message = "that doesn't seem like a valid URL. Try adding 'https://'"), Length(min = 7, max = 350)])
 
 #-----------Routes------------#
 
